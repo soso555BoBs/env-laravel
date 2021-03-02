@@ -1,50 +1,44 @@
 # docker-laravel 🐳
 
-![License](https://img.shields.io/github/license/ucan-lab/docker-laravel?color=f05340)
-![Stars](https://img.shields.io/github/stars/ucan-lab/docker-laravel?color=f05340)
-![Issues](https://img.shields.io/github/issues/ucan-lab/docker-laravel?color=f05340)
-![Forks](https://img.shields.io/github/forks/ucan-lab/docker-laravel?color=f05340)
+![License](https://img.shields.io/github/license/sosobl/env-laravel?color=f05340)
+![Stars](https://img.shields.io/github/stars/sosobl/env-laravel?color=f05340)
+![Issues](https://img.shields.io/github/issues/sosobl/env-laravel?color=f05340)
+![Forks](https://img.shields.io/github/forks/sosobl/env-laravel?color=f05340)
 
 ## Introduction
 
 Build a simple laravel development environment with docker-compose.
+fork from ![ucan-lab/docker-laravel](https://github.com/ucan-lab/docker-laravel)
 
 ## Usage
 
 ```bash
-$ git clone git@github.com:ucan-lab/docker-laravel.git
-$ cd docker-laravel
+$ git clone git@github.com:sosobl/env-laravel.git
+$ cd env-laravel
 $ make create-project # Install the latest Laravel project
 $ make install-recommend-packages # Not required
 ```
 
 http://localhost
 
-Read this [Makefile](https://github.com/ucan-lab/docker-laravel/blob/master/Makefile).
+Read this [Makefile](https://github.com/sosobl/env-laravel/blob/master/Makefile).
 
 ## Tips
 
-Read this [Wiki](https://github.com/ucan-lab/docker-laravel/wiki).
+Read this [Wiki](https://github.com/sosobl/env-laravel/wiki).
 
 ## Container structure
 
 ```bash
 ├── app
-├── web
 └── db
 ```
 
 ### app container
 
 - Base image
-  - [php](https://hub.docker.com/_/php):8.0-fpm-buster
+  - [php](https://hub.docker.com/_/php):7.4-apache
   - [composer](https://hub.docker.com/_/composer):2.0
-
-### web container
-
-- Base image
-  - [nginx](https://hub.docker.com/_/nginx):1.18-alpine
-  - [node](https://hub.docker.com/_/node):14.2-alpine
 
 ### db container
 
