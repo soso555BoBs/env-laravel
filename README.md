@@ -1,14 +1,14 @@
-# docker-laravel 🐳
+# env-laravel 🐳
 
-![License](https://img.shields.io/github/license/sosobl/env-laravel?color=f05340)
-![Stars](https://img.shields.io/github/stars/sosobl/env-laravel?color=f05340)
-![Issues](https://img.shields.io/github/issues/sosobl/env-laravel?color=f05340)
-![Forks](https://img.shields.io/github/forks/sosobl/env-laravel?color=f05340)
+![License](https://img.shields.io/github/license/sosobl/env-laravel)
+![Stars](https://img.shields.io/github/stars/sosobl/env-laravel)
+![Issues](https://img.shields.io/github/issues/sosobl/env-laravel)
+![Forks](https://img.shields.io/github/forks/sosobl/env-laravel)
 
 ## Introduction
 
-Build a simple laravel development environment with docker-compose.
-fork from ![ucan-lab/docker-laravel](https://github.com/ucan-lab/docker-laravel)
+- Build a simple laravel development environment with docker-compose.
+- fork from [ucan-lab/docker-laravel](https://github.com/ucan-lab/docker-laravel)
 
 ## Usage
 
