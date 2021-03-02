@@ -26,7 +26,7 @@ RUN apt-get update && \
   composer config -g process-timeout 3600 && \
   composer config -g repos.packagist composer https://packagist.org
 
-COPY ./infra/docker/php/php-fpm.d/zzz-www.conf /etc/apache2/sites-enabled/
+COPY ./000-default.conf /etc/apache2/sites-enabled/
 COPY ./infra/docker/php/php.ini /usr/local/etc/php/php.ini
 
 # Laravelで必要になるmodRewriteを有効化する
