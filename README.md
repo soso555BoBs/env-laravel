@@ -10,6 +10,11 @@
 - Build a simple laravel development environment with docker-compose.
 - fork from [ucan-lab/docker-laravel](https://github.com/ucan-lab/docker-laravel)
 
+## References
+
+- [最強のLaravel開発環境をDockerを使って構築する](https://qiita.com/ucan-lab/items/5fc1281cd8076c8ac9f4)
+- [DockerでPHP7.4+Apache+MySQLの環境構築しようと思ったら詰まりまくった【Windows & Mac】](https://qiita.com/buzzdark1212/items/b542161523aa324d9c3d)
+
 ## Usage
 
 ```bash
