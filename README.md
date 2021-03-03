@@ -17,12 +17,23 @@
 
 ## Usage
 
-```bash
-$ git clone git@github.com:sosobl/env-laravel.git
-$ cd env-laravel
-$ make create-project # Install the latest Laravel project
-$ make install-recommend-packages # Not required
-```
+- with creating laravel project
+
+    ```bash
+    $ git clone git@github.com:sosobl/env-laravel.git
+    $ cd env-laravel
+    $ make create-project # Install the latest Laravel project
+    $ make install-recommend-packages # Not required
+    ```
+
+- without creating laravel project
+
+    ```bash
+    $ git clone git@github.com:sosobl/env-laravel.git
+    $ cd env-laravel
+    $ git clone git@github.com:laravel/laravel.git docker-laravel/backend # Clone any project to the backend directory
+    $ make init
+    ```
 
 http://localhost
 
