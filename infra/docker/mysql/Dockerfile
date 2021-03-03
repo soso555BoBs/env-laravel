@@ -3,4 +3,4 @@ LABEL maintainer="sosobl"
 
 ENV TZ=Asia/Tokyo
 
-COPY ./infra/docker/mysql/my.cnf /etc/my.cnf
+COPY ./infra/docker/mysql/my.cnf /etc/mysql/conf.d/my.cnf
