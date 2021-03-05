@@ -10,7 +10,8 @@ ENV TZ=Asia/Tokyo \
   LC_ALL=ja_JP.UTF-8 \
   # composer environment
   COMPOSER_ALLOW_SUPERUSER=1 \
-  COMPOSER_HOME=/composer
+  COMPOSER_HOME=/composer \
+  APACHE_LOG_DIR=/var/log/apache2
 
 # COPY --from=composer:2.0 /usr/bin/composer /usr/bin/composer
 RUN cd /usr/bin && curl -s http://getcomposer.org/installer | php && ln -s /usr/bin/composer.phar /usr/bin/composer
