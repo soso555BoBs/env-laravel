@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "backend"
+		}
+	],
+	"settings": {},
+    "extensions": {
+        "recommendations": [
+            "ms-azuretools.vscode-docker",
+			"mikestead.dotenv",
+			"editorconfig.editorconfig",
+			"ms-ceintl.vscode-language-pack-ja",
+			"ryannaddy.laravel-artisan",
+			"onecentlin.laravel-blade",
+			"codingyu.laravel-goto-view",
+			"onecentlin.laravel5-snippets",
+			"felixfbecker.php-debug",
+			"felixfbecker.php-intellisense",
+			"davidanson.vscode-markdownlint"
+        ]
+    }
+}
