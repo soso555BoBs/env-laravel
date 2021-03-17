@@ -1,4 +1,4 @@
-FROM mysql/mysql-server:8.0
+FROM mysql/mysql-server:5.7
 LABEL maintainer="sosobl"
 
 ENV TZ=Asia/Tokyo

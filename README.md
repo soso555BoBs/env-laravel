@@ -54,12 +54,13 @@ Read this [Wiki](https://github.com/sosobl/env-laravel/wiki).
 
 - Base image
   - [php](https://hub.docker.com/_/php):7.4-apache
+  - [laravel 5.7](https://laraweb.net/)
   - [composer](https://hub.docker.com/_/composer):2.0
 
 ### db container
 
 - Base image
-  - [mysql](https://hub.docker.com/_/mysql):8.0
+  - [mysql](https://hub.docker.com/_/mysql):5.7
 
 #### Persistent MySQL Storage
 
