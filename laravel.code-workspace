@@ -7,7 +7,13 @@
 			"path": "backend"
 		}
 	],
-	"settings": {},
+	"settings": {
+        "workbench.colorCustomizations": {
+            "activityBarBadge.background": "#f8e80cf3",
+            "activityBar.background": "#f8e80cf3",
+            "activityBar.foreground": "#000000"
+        }
+    },
     "extensions": {
         "recommendations": [
             "ms-azuretools.vscode-docker",
