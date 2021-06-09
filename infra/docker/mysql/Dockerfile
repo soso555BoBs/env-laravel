@@ -1,6 +1,6 @@
-FROM mysql/mysql-server:5.7
-LABEL maintainer="sosobl"
+FROM mysql/mysql-server:8.0
+LABEL maintainer="soso555BoBs"
 
 ENV TZ=Asia/Tokyo
 
-COPY ./infra/docker/mysql/my.cnf /etc/mysql/conf.d/my.cnf
+COPY ./infra/docker/mysql/my.cnf /etc/my.cnf

@@ -3,12 +3,9 @@ up:
 build:
 	docker-compose build --no-cache --force-rm
 laravel-install:
-	docker-compose exec app composer create-project --prefer-dist "laravel/laravel=5.7" .
-laravel-install3:
-	docker-compose exec app curl -sLO https://github.com/laravel/laravel/archive/v3.2.14.tar.gz
-	docker-compose exec app tar xvfz v3.2.14.tar.gz --strip-components=1 --no-same-owner --no-same-permissions
-	docker-compose exec app rm -f v3.2.14.tar.gz
+	docker-compose exec app composer create-project --prefer-dist laravel/laravel .
 create-project:
+	mkdir -p backend
 	@make build
 	@make up
 	@make laravel-install
@@ -16,16 +13,8 @@ create-project:
 	docker-compose exec app php artisan storage:link
 	docker-compose exec app chmod -R 777 storage bootstrap/cache
 	@make fresh
-create-project3:
-	@make build
-	@make up
-	@make laravel-install3
-	docker-compose exec app php artisan key:generate
-	docker-compose exec app php artisan storage:link
-	docker-compose exec app chmod -R 777 storage
-	@make fresh
 install-recommend-packages:
-	docker-compose exec app composer require doctrine/dbal "^2"
+	docker-compose exec app composer require doctrine/dbal
 	docker-compose exec app composer require --dev ucan-lab/laravel-dacapo
 	docker-compose exec app composer require --dev barryvdh/laravel-ide-helper
 	docker-compose exec app composer require --dev beyondcode/laravel-dump-server
@@ -40,12 +29,6 @@ init:
 	docker-compose exec app php artisan key:generate
 	docker-compose exec app php artisan storage:link
 	docker-compose exec app chmod -R 777 storage bootstrap/cache
-	@make fresh
-init3:
-	docker-compose up -d --build
-	docker-compose exec app php artisan key:generate
-	docker-compose exec app php artisan storage:link
-	docker-compose exec app chmod -R 777 storage
 	@make fresh
 remake:
 	@make destroy

@@ -1,9 +1,9 @@
 # env-laravel 🐳
 
-![License](https://img.shields.io/github/license/sosobl/env-laravel)
-![Stars](https://img.shields.io/github/stars/sosobl/env-laravel)
-![Issues](https://img.shields.io/github/issues/sosobl/env-laravel)
-![Forks](https://img.shields.io/github/forks/sosobl/env-laravel)
+![License](https://img.shields.io/github/license/soso555BoBs/env-laravel)
+![Stars](https://img.shields.io/github/stars/soso555BoBs/env-laravel)
+![Issues](https://img.shields.io/github/issues/soso555BoBs/env-laravel)
+![Forks](https://img.shields.io/github/forks/soso555BoBs/env-laravel)
 
 ## Introduction
 
@@ -20,7 +20,7 @@
 - with creating laravel project
 
     ```bash
-    $ git clone git@github.com:sosobl/env-laravel.git
+    $ git clone git@github.com:soso555BoBs/env-laravel.git
     $ cd env-laravel
     $ make create-project # Install the latest Laravel project
     $ make install-recommend-packages # Not required
@@ -29,7 +29,7 @@
 - without creating laravel project
 
     ```bash
-    $ git clone git@github.com:sosobl/env-laravel.git
+    $ git clone git@github.com:soso555BoBs/env-laravel.git
     $ cd env-laravel
     $ git clone git@github.com:laravel/laravel.git docker-laravel/backend # Clone any project to the backend directory
     $ make init
@@ -37,30 +37,38 @@
 
 http://localhost
 
-Read this [Makefile](https://github.com/sosobl/env-laravel/blob/master/Makefile).
+Read this [Makefile](https://github.com/soso555BoBs/env-laravel/blob/master/Makefile).
 
 ## Tips
 
-Read this [Wiki](https://github.com/sosobl/env-laravel/wiki).
+Read this [Wiki](https://github.com/soso555BoBs/env-laravel/wiki).
 
-## Container structure
+## Container structures
 
 ```bash
 ├── app
+├── web
+├── redis
+├── mailhog
 └── db
 ```
 
 ### app container
 
 - Base image
-  - [php](https://hub.docker.com/_/php):7.4-apache
-  - [laravel 5.7](https://laraweb.net/)
+  - [php](https://hub.docker.com/_/php):8.0-fpm-buster
   - [composer](https://hub.docker.com/_/composer):2.0
+
+### web container
+
+- Base image
+  - [nginx](https://hub.docker.com/_/nginx):1.20-alpine
+  - [node](https://hub.docker.com/_/node):16-alpine
 
 ### db container
 
 - Base image
-  - [mysql](https://hub.docker.com/_/mysql):5.7
+  - [mysql/mysql-server](https://hub.docker.com/r/mysql/mysql-server):8.0
 
 #### Persistent MySQL Storage
 
