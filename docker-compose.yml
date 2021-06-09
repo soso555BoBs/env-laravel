@@ -5,6 +5,11 @@ volumes:
   psysh-store:
 services:
   app:
+    depends_on:
+      - web
+      - db
+      - redis
+      - mail
     build:
       context: .
       dockerfile: ./infra/docker/php/Dockerfile
