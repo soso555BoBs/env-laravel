@@ -28,12 +28,15 @@ services:
         volume:
           nocopy: true
     environment:
-      - DB_CONNECTION=mysql
+      - DB_CONNECTION=pgsql
       - DB_HOST=db
-      - DB_PORT=3306
+      - DB_PORT=5432
       - DB_DATABASE=${DB_NAME:-laravel_local}
       - DB_USERNAME=${DB_USER:-phper}
       - DB_PASSWORD=${DB_PASS:-secret}
+      - POSTGRES_USER=${DB_USER:-phper}
+      - POSTGRES_PASSWORD=${DB_PASSWORD:-secret}
+      - POSTGRES_DB=${DB_NAME:-laravel_local}
 
   web:
     build:
@@ -54,26 +57,46 @@ services:
         source: ./backend
         target: /work/backend
 
+  # db:
+  #   build:
+  #     context: .
+  #     dockerfile: ./infra/docker/mysql/Dockerfile
+  #   hostname: mysql
+  #   ports:
+  #     - target: 3306
+  #       published: ${DB_PORT:-3306}
+  #       protocol: tcp
+  #       mode: host
+  #   volumes:
+  #     - type: volume
+  #       source: db-store
+  #       target: /var/lib/mysql
+  #       volume:
+  #         nocopy: true
+  #   environment:
+  #     - MYSQL_DATABASE=${DB_NAME:-laravel_local}
+  #     - MYSQL_USER=${DB_USER:-phper}
+  #     - MYSQL_PASSWORD=${DB_PASS:-secret}
+  #     - MYSQL_ROOT_PASSWORD=${DB_PASS:-secret}
+
   db:
-    build:
-      context: .
-      dockerfile: ./infra/docker/mysql/Dockerfile
+    image: postgres:12.2-alpine
+    hostname: pgsql
     ports:
-      - target: 3306
-        published: ${DB_PORT:-3306}
+      - target: 5432
+        published: ${DB_PORT:-5432}
         protocol: tcp
         mode: host
     volumes:
       - type: volume
         source: db-store
-        target: /var/lib/mysql
+        target: /var/lib/postgresql
         volume:
           nocopy: true
     environment:
-      - MYSQL_DATABASE=${DB_NAME:-laravel_local}
-      - MYSQL_USER=${DB_USER:-phper}
-      - MYSQL_PASSWORD=${DB_PASS:-secret}
-      - MYSQL_ROOT_PASSWORD=${DB_PASS:-secret}
+      POSTGRES_USER: ${DB_USER:-phper}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-secret}
+      POSTGRES_DB: ${DB_NAME:-laravel_local}
 
   redis:
     image: "redis:latest"

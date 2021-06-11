@@ -15,13 +15,13 @@ ENV TZ=Asia/Tokyo \
 COPY --from=composer:2.0 /usr/bin/composer /usr/bin/composer
 
 RUN apt-get update && \
-  apt-get -y install git libicu-dev libonig-dev libzip-dev unzip locales curl vim && \
+  apt-get -y install git libicu-dev libonig-dev libzip-dev unzip locales curl vim libpq-dev && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* && \
   locale-gen ja_JP.UTF-8 && \
   localedef -f UTF-8 -i ja_JP ja_JP.UTF-8 && \
   mkdir /var/run/php-fpm && \
-  docker-php-ext-install intl pdo_mysql zip bcmath mbstring && \
+  docker-php-ext-install intl pdo_mysql pdo pdo_pgsql zip bcmath mbstring && \
   composer config -g process-timeout 3600 && \
   composer config -g repos.packagist composer https://packagist.org
 
