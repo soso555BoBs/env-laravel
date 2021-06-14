@@ -90,7 +90,7 @@ services:
     volumes:
       - type: volume
         source: db-store
-        target: /var/lib/postgresql
+        target: /var/lib/postgresql/data
         volume:
           nocopy: true
     environment:

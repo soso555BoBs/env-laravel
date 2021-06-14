@@ -14,6 +14,7 @@
 
 - [最強のLaravel開発環境をDockerを使って構築する](https://qiita.com/ucan-lab/items/5fc1281cd8076c8ac9f4)
 - [DockerでPHP7.4+Apache+MySQLの環境構築しようと思ったら詰まりまくった【Windows & Mac】](https://qiita.com/buzzdark1212/items/b542161523aa324d9c3d)
+- [npm インストール方法](https://qiita.com/seibe/items/36cef7df85fe2cefa3ea)
 
 ## Usage
 
@@ -35,7 +36,8 @@
     $ make init
     ```
 
-http://localhost
+- http://localhost
+- http://localhost:8025/
 
 Read this [Makefile](https://github.com/soso555BoBs/env-laravel/blob/master/Makefile).
 
