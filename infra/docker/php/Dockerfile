@@ -26,11 +26,12 @@ RUN apt-get update && \
   composer config -g repos.packagist composer https://packagist.org
 
 # node
-RUN apt install -y nodejs npm && \
-    npm install n -g && \
-    n stable && \
-    apt purge -y nodejs npm && \
-    exec $SHELL -l
+RUN apt update
+RUN apt install -y nodejs npm
+RUN npm install n -g
+RUN n stable
+RUN apt purge -y nodejs npm
+RUN exec $SHELL -l
 
 COPY ./infra/docker/php/php-fpm.d/zzz-www.conf /usr/local/etc/php-fpm.d/zzz-www.conf
 COPY ./infra/docker/php/php.ini /usr/local/etc/php/php.ini
